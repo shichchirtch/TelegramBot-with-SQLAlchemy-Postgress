@@ -3,13 +3,13 @@ from aiogram import Bot, Dispatcher
 import game_handlers
 import command_handlers
 from bot_base import init_models
-from bot_tocken import BOT_TOKEN
+from config import settings
 
 # Функция конфигурирования и запуска бота
 async def main():
     await init_models()
     # Инициализируем бот и диспетчер
-    bot = Bot(token=BOT_TOKEN,
+    bot = Bot(token=settings.BOT_TOKEN,
               parse_mode='HTML')
     dp = Dispatcher()
     # Регистрируем роутеры в диспетчере

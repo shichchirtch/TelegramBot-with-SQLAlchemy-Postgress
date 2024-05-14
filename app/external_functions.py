@@ -49,6 +49,7 @@ async def reset(user_tg_id):
         n = query.scalar()
         n.attempts = 5
         n.att_1 = n.att_2 = n.att_3 = n.att_4 = n.att_5 = 0
+        n.secret_number = randint(1,100)
         await session.commit()
 
 
